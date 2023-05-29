@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Food;
 use App\Models\User;
+use App\Models\Cheflist;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 
@@ -106,5 +107,29 @@ class AdminController extends Controller
 
         return view('admin.viewreservation',compact('data'));
     }
+
+    public function viewchef()
+    {
+        return view('admin.viewchef');
+    }
+    public function chef(Request $request)
+    {
+        $data = new Cheflist;
+
+        $image=$request->image;
+
+        $imagename =time().'.'.$image->getClientOriginalExtension();
+         $request->image->move('chefimage',$imagename);
+
+         $data->image = $imagename;
+
+         $data->name = $request->name;
+         $data->speciality = $request->speciality;
+
+         $data->save();
+
+         return redirect()->back();
+    }
+
 
 }
