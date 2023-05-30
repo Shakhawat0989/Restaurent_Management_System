@@ -49,7 +49,7 @@
                     <th style="padding:30px">Remove</th>
                 </tr>
                 @foreach($data as $data)
-                <tr>
+                <tr style="text-align:center">
                     <td style="padding:15px">{{$data->name}}</td>
                     <td style="padding:15px">{{$data->speciality}}</td>
                     <td style="padding:15px"><img height="100" width="100" src="/chefimage/{{$data->image}}"></td>

@@ -34,7 +34,7 @@
 
             <div style= "margin-bottom:20px">
                 <label>Image</label>
-                <input type = "file" name = "image" required>
+                <input type = "file" name = "image">
 
             </div>
             <br/>
