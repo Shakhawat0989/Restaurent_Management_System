@@ -20,6 +20,7 @@ class HomeController extends Controller
      public function redirects(){
 
         $data=Food::all();
+        $data2=Cheflist::all();
 
         $usertype = Auth::user()->user_type;
 
@@ -27,7 +28,7 @@ class HomeController extends Controller
             return view('admin.adminhome');
         }
         else {
-        return view('home',compact('data'));
+        return view('home',compact('data','data2'));
         }
     }
 }

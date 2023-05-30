@@ -38,6 +38,28 @@
 
 
         </form>
+
+        <div style="padding-bottom:100px">
+            <table style="background:black;margin-top:40px">
+                <tr>
+                    <th style="padding:30px">Chef Name</th>
+                    <th style="padding:30px">Speciality</th>
+                    <th style="padding:30px">Image</th>
+                    <th style="padding:30px">Edit</th>
+                    <th style="padding:30px">Remove</th>
+                </tr>
+                @foreach($data as $data)
+                <tr>
+                    <td style="padding:15px">{{$data->name}}</td>
+                    <td style="padding:15px">{{$data->speciality}}</td>
+                    <td style="padding:15px"><img height="100" width="100" src="/chefimage/{{$data->image}}"></td>
+                    <td style="padding:15px"><a href="{{url('updatechef',$data->id)}}">Update</a></td>
+                    <td style="padding:15px"><a href="{{url('deletechef',$data->id)}}">Delete</a></td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
+
     </div>
     </div>
 

@@ -30,6 +30,9 @@ Route::post("/reservation",[AdminController::class, "reservation"]);
 Route::get("/viewreservation",[AdminController::class, "viewreservation"]);
 Route::get("/viewchef",[AdminController::class, "viewchef"]);
 Route::post("/chef",[AdminController::class, "chef"]);
+Route::get("/updatechef/{id}",[AdminController::class, "updatechef"]);
+Route::post("/uploadchef/{id}",[AdminController::class, "uploadchef"]);
+Route::get("/deletechef/{id}",[AdminController::class, "deletechef"]);
 
 Route::middleware([
     'auth:sanctum',
